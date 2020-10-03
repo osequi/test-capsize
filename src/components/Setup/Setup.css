@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* FIXME: Input and select distorts the grid. */
+input[type="range"],
+input[type="color"],
+input[type="file"],
+select,
+option {
+  background: red;
+  max-height: calc(var(--lem) * 0.5);
+}
+
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: inherit;
+  border-spacing: 0;
+  border-color: inherit;
+  vertical-align: inherit;
+  text-align: left;
+  font-weight: inherit;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+}
+th,
+td {
+  display: inline;
+}
+
+img {
+  display: block;
+}
+
+/**
+ * This fixes the hr element from breaking the grid
+ */
+hr {
+  border: 0;
+  border: 1px solid;
+  font-size: calc(var(--lem) * 6 / 9);
+}
