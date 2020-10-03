@@ -12,8 +12,6 @@ import Grid from "./components/Grid";
  * 1.Add the same settings here: https://seek-oss.github.io/capsize/
  * 2. copy the css-in-js code into useStyles
  * 3. Edit '::before' and '::after'
- *
- * This capHeight: 16 lineGap: 4 combo works like a charm: Screenshot from 2020-10-03 09-58-36.png
  */
 const capsizeStyles = capsize({
   capHeight: 16,
