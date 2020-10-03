@@ -1,7 +1,9 @@
 import React from "react";
-import capsize from "capsize";
 import { makeStyles } from "@material-ui/styles";
 import clsx from "clsx";
+
+import capsize from "capsize";
+import basekick from "basekick";
 
 import Setup from "./components/Setup";
 import Grid from "./components/Grid";
@@ -25,7 +27,31 @@ const capsizeStyles = capsize({
   },
 });
 
+const basekickStyles = basekick({
+  typeSizeModifier: 1,
+  typeRowSpan: 1,
+  descenderHeightScale: 1,
+  baseFontSize: 16,
+  gridRowHeight: 20,
+});
+
+const basekickH1Styles = basekick({
+  typeSizeModifier: 2,
+  typeRowSpan: 1,
+  descenderHeightScale: 1,
+  baseFontSize: 16,
+  gridRowHeight: 20,
+});
+
 const useStyles = makeStyles(() => ({
+  basekick: {
+    ...basekickStyles,
+  },
+
+  basekickH1: {
+    ...basekickH1Styles,
+  },
+
   container: {
     maxWidth: "10em",
 
@@ -67,7 +93,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const App = (props) => {
-  const { container, h1 } = useStyles(props);
+  const { container, h1, basekick, basekickH1 } = useStyles(props);
 
   return (
     <>
@@ -81,6 +107,19 @@ const App = (props) => {
         nisi, sed feugiat metus. Pellentesque rutrum vel metus non dignissim.
         Aenean egestas neque mattis mi maximus luctus.
       </p>
+      <div className={clsx("Basekick", basekick)}>
+        <p>
+          <strong>With Basekick</strong>
+        </p>
+        <h1 className={clsx(basekickH1)}>Heading 1</h1>
+        <p>
+          Lorem ipsum Lolor sit amet, Lonsectetur adipiscing elit. Duis eu
+          ornare nisi, sed feugiat metus. Pellentesque rutrum vel metus non
+          dignissim. Aenean egestas neque mattis mi maximus luctus. Praesent et
+          commodo dui, nec eleifend lectus. Pellentesque blandit nisi tellus, id
+          efficitur urna consectetur id. Sed convallis tempor dui vel aliquet.
+        </p>
+      </div>
       <div className={clsx("Demo", container)}>
         <p>
           <strong>With Capsize</strong>

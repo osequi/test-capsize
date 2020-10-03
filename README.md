@@ -7,6 +7,6 @@ Based on:
 
 Status:
 
-- Capsize seems to be working with lots of effort.
+- Both Capsize and Basekick seems to be working with lots of effort.
 - The end result will set font size in px; and we need em;
 - It's better to create a new one using the theory behind.
